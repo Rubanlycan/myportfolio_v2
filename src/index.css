@@ -1,0 +1,56 @@
+@font-face {
+  font-family: kamerik-bold;
+  src: url(./Fonts/kamerik/Kamerik\ 205\ Bold.ttf);
+}
+@font-face {
+  font-family: kamerik-oblique;
+  src: url(./Fonts/kamerik/Kamerik\ 205\ Bold\ Oblique.ttf);
+}
+@font-face {
+  font-family: kamerik-book;
+  src: url(./Fonts/kamerik/Kamerik\ 205\ Book.ttf);
+}
+@font-face {
+  font-family: kamerik-book-oblique;
+  src: url(./Fonts/kamerik/Kamerik\ 205\ Book\ Oblique.ttf);
+}
+@font-face {
+  font-family: kamerik-heavy;
+  src: url(./Fonts/kamerik/Kamerik\ 205\ Heavy.ttf);
+}
+@font-face {
+  font-family: kamerik-heavy-oblique;
+  src: url(./Fonts/kamerik/Kamerik\ 205\ Heavy\ Oblique.ttf);
+}
+@font-face {
+  font-family: kamerik-light;
+  src: url(./Fonts/kamerik/Kamerik\ 205\ Light.ttf);
+}
+@font-face {
+  font-family: kamerik-light-oblique;
+  src: url(./Fonts/kamerik/Kamerik\ 205\ Light\ Oblique.ttf);
+}
+@font-face {
+  font-family: kamerik-thin;
+  src: url(./Fonts/kamerik/Kamerik\ 205\ Thin.ttf);
+}
+@font-face {
+  font-family: kamerik-thin-oblique;
+  src: url(./Fonts/kamerik/Kamerik\ 205\ Thin\ Oblique.ttf);
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+:root {
+  --primary-color: #8443df;
+  --secondary-color: #773dc8;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
