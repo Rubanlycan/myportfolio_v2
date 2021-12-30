@@ -33,7 +33,7 @@ const HomeScreen = () => {
             </div>
             <h5 className="mt-2 " style={{ whiteSpace: "pre-wrap" }}>
               {
-                "A Full-Stack Developer passionate about \ncreating interractive mobile applications and experience in web."
+                "A Full-Stack Developer passionate about \ncreating interractive mobile applications and experience \nin web."
               }
             </h5>
             <div className="d-flex flex-row mt-4 justify-content-between">

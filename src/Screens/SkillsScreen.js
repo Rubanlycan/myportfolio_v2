@@ -1,9 +1,11 @@
 import React from "react";
+import SkillCards from "../Components/SkillCards";
 
 const SkillsScreen = () => {
   return (
-    <div className="w-75">
-      <h1>SkillsScreen</h1>
+    <div className="home">
+      <div className="d-flex w-25"></div>
+      <SkillCards />
     </div>
   );
 };
