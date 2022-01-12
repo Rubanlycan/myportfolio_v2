@@ -1,4 +1,5 @@
 import React from "react";
+import ProjectCard from "../Components/ProjectCard";
 import SkillCards from "../Components/SkillCards";
 
 const SkillsScreen = () => {
@@ -6,6 +7,7 @@ const SkillsScreen = () => {
     <div className="home">
       <div className="d-flex w-25"></div>
       <SkillCards />
+      <ProjectCard />
     </div>
   );
 };

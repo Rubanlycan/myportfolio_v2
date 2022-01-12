@@ -11,7 +11,35 @@ a {
   justify-content: center;
   background-color: #f7f7f7;
 }
+.contact-screen-style {
+  display: flex;
+  height: 100vh;
+  background-color: #fbf8ff;
+  justify-content: center;
+  align-items: center;
+}
+.child-contact {
+  display: flex;
+  -webkit-box-shadow: 5px 5px 10px 2px rgba(184, 184, 184, 0.96);
+  box-shadow: 5px 5px 10px 2px rgba(184, 184, 184, 0.96);
+  position: absolute;
+  left: 22em;
+  height: 350px;
+  width: 250px;
+  background-color: var(--primary-color);
+}
+.contact-label{
 
+    color: #773dc8;
+     font-size: 12px;
+    font-weight: 600
+
+}
+.input{
+  border-color:#773dc8;
+  border-width: 1px;
+  width: 500px;
+}
 .resume-button {
   background-color: var(--primary-color);
   padding-top: 8px;

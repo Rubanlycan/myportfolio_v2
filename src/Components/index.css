@@ -25,6 +25,27 @@ p {
   box-shadow: 0px 2px 8px 3px rgba(204, 204, 204, 0.9);
   border-radius: 5px;
 }
+.project-list {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.card-style:hover{
+  border-color: var(--primary-color);
+  border-width: 10px;
+}
+.project-list:hover {
+  transform: scale(1.05);
+  color:var(--secondary-color);
+  font-weight: bold;
+
+}
 .progress {
   height: 3px;
   background-color: var(--primary-color);
@@ -60,6 +81,20 @@ p {
   background-color: var(--secondary-color);
 }
 
+.contact-parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 60vh;
+  width: 50%;
+
+  -webkit-box-shadow: 5px 5px 10px 2px rgba(184, 184, 184, 0.96);
+  box-shadow: 5px 5px 10px 2px rgba(184, 184, 184, 0.96);
+}
+.project-language{
+  color: var(--primary-color);
+}
 @keyframes progressbar {
   0% {
     width: 0;

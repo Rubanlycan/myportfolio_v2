@@ -65,7 +65,7 @@ const SkillCards = () => {
                 ></div>
               </div>
             </div>
-            <p className="text-end">{getCurrentProgress(i.skill_rate)}</p>
+            <p className="text-end">{i.skill_rate}</p>
           </div>
         ))}
       </div>
