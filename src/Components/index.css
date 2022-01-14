@@ -3,6 +3,7 @@ p {
   margin-top: 0;
 }
 .sidebar {
+
   height: 100%;
   width: 85px;
   position: fixed;
@@ -35,6 +36,11 @@ p {
   padding-bottom: 15px;
   margin-top: 15px;
   margin-bottom: 15px;
+}
+.input{
+  border-color:#e4d6f9;
+  border-width: 2px;
+  width: 350px;
 }
 .card-style:hover{
   border-color: var(--primary-color);
@@ -71,7 +77,8 @@ p {
 .title-class {
   display: flex;
   height: 10%;
-  padding-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background-color: var(--secondary-color);
   justify-content: center;
   align-items: flex-start;
@@ -81,17 +88,7 @@ p {
   background-color: var(--secondary-color);
 }
 
-.contact-parent {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  height: 60vh;
-  width: 50%;
 
-  -webkit-box-shadow: 5px 5px 10px 2px rgba(184, 184, 184, 0.96);
-  box-shadow: 5px 5px 10px 2px rgba(184, 184, 184, 0.96);
-}
 .project-language{
   color: var(--primary-color);
 }

@@ -35,10 +35,40 @@ a {
     font-weight: 600
 
 }
-.input{
-  border-color:#773dc8;
-  border-width: 1px;
-  width: 500px;
+.contact-screen{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100vh;
+  width: 100%;
+
+}
+.label{
+  color:var(--primary-color);
+  font-weight: bold;
+  font-size: 12px;
+
+}
+.contact-parent {
+  display: flex;
+  width: 18cm;
+  height:  11cm;
+  align-items: center;
+  border-radius: 2px;
+  -webkit-box-shadow: 5px 5px 10px 2px rgba(184, 184, 184, 0.96);
+  box-shadow: 5px 5px 10px 2px rgba(184, 184, 184, 0.96);
+}
+.contact-child-left {
+  display: flex;
+  position: relative;
+  margin-right: 20px;
+  right:2em;
+  border-radius: 2px;
+  width: 14em;
+  height: 18em;
+  background-color: var(--primary-color);
+  -webkit-box-shadow: 5px 5px 10px 2px rgba(184, 184, 184, 0.96);
+  box-shadow: 5px 5px 10px 2px rgba(184, 184, 184, 0.96);
 }
 .resume-button {
   background-color: var(--primary-color);

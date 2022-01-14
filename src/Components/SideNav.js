@@ -12,15 +12,15 @@ const SideNav = () => {
       id="mySidebar"
       className="sidebar "
       onMouseOver={() => setIsHovered(true)}
-      onMouseOut={() => setIsHovered(false)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="title-class  ">
+      <div className="title-class "  >
         {isHovered ? (
           <h5 style={{ display: "flex", color: "#fff", margin: "auto" }}>
             Ruban Nadar
           </h5>
         ) : (
-          <h1 style={{ color: "#fff" }}>RN</h1>
+          <h1 style={{ color: "#fff" }} >RN</h1>
         )}
       </div>
 

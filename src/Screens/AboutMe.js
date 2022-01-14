@@ -12,7 +12,7 @@ const AboutMe = () => {
         subtitle1={"Ruban"}
         subtitle2={"Nadar"}
         showResume={false}
-        about={`I'm from computer science background MERN Stack developer\nhaving 4+ years experience in Hybrid mobile Apps and Web Apps development worked in different types of projects seeking forward to enhance my skills and desire to develope mermizing applications`}
+        about={`I'm from computer science background MERN Stack developer\nhaving 4+ years experience in Hybrid mobile Apps and Web Apps\ndevelopment worked in different types of projects seeking forward to\nenhance my skills and desire to develope mermizing applications`}
       />
     </div>
   );

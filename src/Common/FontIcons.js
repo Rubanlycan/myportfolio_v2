@@ -1,13 +1,18 @@
 import React from "react";
-import { AiFillLinkedin, AiFillGithub, AiFillInstagram } from "react-icons/ai";
+import { AiFillLinkedin, AiFillGithub, AiFillInstagram, AiOutlineMail } from "react-icons/ai";
+import { GoLocation, } from "react-icons/go";
+import { FiPhone, } from "react-icons/fi";
 const ICON_NAMES = {
   AiFillGithub,
   AiFillInstagram,
   AiFillLinkedin,
+  AiOutlineMail,
+  GoLocation,
+  FiPhone,
 };
-const FontIcons = ({ type, name, size, className }) => {
+const FontIcons = ({ type, name, size, className, color }) => {
   const FontIcon = ICON_NAMES[type];
-  return <FontIcon size={size} className={className} />;
+  return <FontIcon color={color} size={size} className={className} />;
 };
 
 export default FontIcons;
