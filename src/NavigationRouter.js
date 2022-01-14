@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import SideNav from "./Components/SideNav";
-import AboutMe from "./Screens/AboutMe";
+import ProjectScreen from "./Screens/ProjectScreen";
 import HomeScreen from "./Screens/HomeScreen";
 import SkillsScreen from "./Screens/SkillsScreen";
-import Contact from "./Screens/Contact";
+import Contact from "./Screens/ContactScreen";
 const NavigationRouter = () => {
   return (
     <>
@@ -12,7 +12,7 @@ const NavigationRouter = () => {
       <Routes>
         <Route path="/" caseSensitive={true} element={<HomeScreen />} />
         <Route path="/skills" caseSensitive={true} element={<SkillsScreen />} />
-        <Route path="/about" caseSensitive={true} element={<AboutMe />} />
+        <Route path="/projects" caseSensitive={true} element={<ProjectScreen />} />
         <Route path="/contact" caseSensitive={true} element={<Contact />} />
       </Routes>
     </>

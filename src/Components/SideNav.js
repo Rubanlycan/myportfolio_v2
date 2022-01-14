@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, memo } from "react";
 import "./index.css";
 import { MenuComponent_Active, MenuComponent_Deactive } from "./MenuComponent";
 
@@ -29,4 +29,4 @@ const SideNav = () => {
   );
 };
 
-export default SideNav;
+export default memo(SideNav);

@@ -16,15 +16,15 @@ export const MenuComponent_Active = () => {
           <p style={{ color: "#fff" }}>Home</p>{" "}
         </a>
         <a
-          href="/about"
+          href="/skills"
           className={`menu-items w-100  d-flex flex-row justify-content-center pt-3 pb-3`}
         >
           <FiUser style={{ color: "#fff" }} size={25} className="me-2" />
-          <p style={{ color: "#fff" }}>About Me</p>
+          <p style={{ color: "#fff" }}>Skills</p>
         </a>
 
         <a
-          href="/skills"
+          href="/projects"
           className={`menu-items w-100  d-flex flex-row justify-content-center pt-3 pb-3`}
         >
           <GoFileCode style={{ color: "#fff" }} size={25} className="me-2" />
@@ -53,14 +53,14 @@ export const MenuComponent_Deactive = () => {
           <VscHome style={{ color: "#fff" }} size={25} className={`me-2 `} />
         </a>
         <a
-          href="/about"
+          href="/skills"
           className={`menu-items w-100  d-flex flex-row justify-content-center pt-3 pb-3`}
         >
           <FiUser style={{ color: "#fff" }} size={25} className="me-2" />
         </a>
 
         <a
-          href="/skills"
+          href="/projects"
           className={`menu-items w-100  d-flex flex-row justify-content-center pt-3 pb-3`}
         >
           <GoFileCode style={{ color: "#fff" }} size={25} className="me-2" />
