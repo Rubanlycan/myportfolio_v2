@@ -23,6 +23,7 @@ const Contact = () => {
     "mailId": "",
     "message": ""
   })
+  const [isVisble, setIsVisible] = React.useState(true)
   const setContactData = (event) => {
     event.preventDefault()
     const { name, value } = event.target
@@ -30,8 +31,19 @@ const Contact = () => {
 
   }
   const onRegisterSender = async () => {
-    const data = await API.registerSenderData(sendMessage)
-    console.log(data)
+    if (sendMessage.name && sendMessage.mailId && sendMessage.message) {
+      const data = await API.registerSenderData(sendMessage)
+      console.log(data)
+      setIsVisible(!isVisble)
+      setSendMessage({
+        "name": "",
+        "mailId": "",
+        "message": ""
+      })
+    } else {
+      alert("Please enter all details")
+    }
+
   }
   return (
     <div className=" contact-screen">
@@ -63,7 +75,8 @@ const Contact = () => {
               <LabelComponent title={"Message"} className={"label"} />
               <InputFieldComponent className={"input"} inputType={"textarea"} name={"message"} onChange={setContactData} />
             </>
-            <ButtonComponent onPress={onRegisterSender} button_text={"Send"} btnStyle={{ backgroundColor: '#8443df', width: 100, borderColor: ' #8443df', alignSelf: 'flex-end' }} />
+            {isVisble ? <ButtonComponent onPress={onRegisterSender} button_text={"Send"} btnStyle={{ backgroundColor: '#8443df', width: 100, borderColor: ' #8443df', alignSelf: 'flex-end' }} /> : <p style={{ color: "#8443df" }}>message sent successfully</p>}
+
           </div>
         </div>
       </div>
