@@ -33,7 +33,7 @@ const Contact = () => {
   const onRegisterSender = async () => {
     if (sendMessage.name && sendMessage.mailId && sendMessage.message) {
       const data = await API.registerSenderData(sendMessage)
-      console.log(data)
+
       setIsVisible(!isVisble)
       setSendMessage({
         "name": "",

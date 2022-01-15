@@ -22,7 +22,7 @@ API.interceptors.request.use(
 );
 
 API.interceptors.response.use((res) => {
-    console.log("request was received")
+    console.log("response was received")
     return res
 }, (error) => {
     return Promise.reject(error)

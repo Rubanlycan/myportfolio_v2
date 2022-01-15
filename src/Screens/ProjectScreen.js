@@ -9,16 +9,16 @@ const ProjectScreen = () => {
   const [hoveredIndex, setHoveredIndex] = useState(-1)
 
   const skillBoxFun = (e, id) => {
-    console.log(e)
+
 
     setHoveredIndex(id)
   }
   return (
-    <div className="w-100 d-flex justify-content-end">
-      <div className=" contact-screen  " style={{ width: '90%', alignSelf: 'flex-end' }}>
-        <div className="d-flex flex-column contact-parent" style={{ height: '60%', width: '70%', alignItems: 'flex-start' }}>
+    <div className="project-parent-container">
+      <div className=" contact-screen " style={{ width: '90%' }}>
+        <div className="d-flex flex-column contact-parent align-items-start" style={{ height: '60%', width: '70%', }}>
 
-          <div className="parent-first"><p className="p-4" style={{ fontSize: 18, fontWeight: 'bold', textAlign: 'center', color: '#fff' }}>{`
+          <div className="parent-first"><p className="p-4 text-center " style={{ fontWeight: 'bold', fontSize: 18, color: '#fff' }}>{`
             Over the years i've done remote work for agencies, consulted for startups and colloborated with talented peoples to create amazing digital products for both business and consumer use.
             `}</p></div>
           <div className="skills-container" style={{ borderTopRightRadius: 5 }}>
@@ -36,10 +36,10 @@ const ProjectScreen = () => {
 
 
                       }} />
-                    <p className="ml-2 " style={{ color: '#000', fontSize: 14, padding: 10, fontWeight: 'bold' }}>{i.title}</p>
+                    <p className="ml-2 " style={{ fontWeight: 'bold', color: '#000', fontSize: 14, padding: 10 }}>{i.title}</p>
                   </div>
 
-                  <p className="ml-2" style={{ textAlign: 'center', color: '#000', fontSize: 12, padding: 10, }}>{i.description}</p>
+                  <p className="ml-2 text-center" style={{ color: '#000', fontSize: 12, padding: 10, }}>{i.description}</p>
                   <p className="ml-2 project-text" >{hoveredIndex === unique ? "< " + i.num + " />" : i.num}</p>
                 </div>
 

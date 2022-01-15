@@ -1,10 +1,12 @@
-import React, { useRef, useState, useEffect, memo } from "react";
+import React, { useRef, useState, useEffect, useMemo } from "react";
 import "./index.css";
 import { MenuComponent_Active, MenuComponent_Deactive } from "./MenuComponent";
 
 const SideNav = () => {
   const sidebarRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
+
+
 
   return (
     <div
@@ -13,6 +15,8 @@ const SideNav = () => {
       className="sidebar "
       onMouseOver={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+
+
     >
       <div className="title-class "  >
         {isHovered ? (
@@ -29,4 +33,4 @@ const SideNav = () => {
   );
 };
 
-export default memo(SideNav);
+export default SideNav;

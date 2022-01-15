@@ -28,9 +28,7 @@ const SKILLS = [
 ];
 const ProjectCard = () => {
   const progressAnimate = useRef(null);
-  React.useEffect(() => {
-    console.log(progressAnimate);
-  }, []);
+
 
   return (
     <div className="w-100 d-flex ">

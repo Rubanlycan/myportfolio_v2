@@ -5,6 +5,7 @@ import { BsTelephone } from "react-icons/bs";
 import { VscHome } from "react-icons/vsc";
 import { GoFileCode } from "react-icons/go";
 export const MenuComponent_Active = () => {
+
   return (
     <div className="menu-list  ">
       <div className="d-flex flex-column w-100 align-items-center">
@@ -16,6 +17,7 @@ export const MenuComponent_Active = () => {
           <p style={{ color: "#fff" }}>Home</p>{" "}
         </a>
         <a
+
           href="/skills"
           className={`menu-items w-100  d-flex flex-row justify-content-center pt-3 pb-3`}
         >
