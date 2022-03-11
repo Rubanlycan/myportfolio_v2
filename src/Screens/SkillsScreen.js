@@ -16,15 +16,19 @@ const SKILL_DATA = [{
 }]
 
 const SkillsScreen = () => {
-  const [slideCurrentIndex, setCurrentIndex] = React.useState(0)
+  const [slideCurrentIndex, setSlideCurrentIndex] = React.useState(0)
+  const [isSlideChanged, setIsSlideChanged] = React.useState(false)
 
+  const changeSlide = (e) => {
+    setSlideCurrentIndex(e)
+  }
   return (
     <div className="w-100 d-flex justify-content-end">
       <div className=" contact-screen  " style={{ width: '90%', alignSelf: 'flex-end' }}>
         <div className="d-flex flex-row contact-parent" style={{ height: '60%', width: '70%', alignItems: 'flex-start' }}>
 
           <div className="d-flex align-items-center" style={{ height: '100%', width: '40%', }}>
-            <Carousel style={{ margin: 20 }} onSelect={e => setCurrentIndex(e)} indicators={false}
+            <Carousel style={{ margin: 20 }} onSelect={e => changeSlide(e)} indicators={false}
               prevIcon={<FontIcons type={"CgChevronLeftO"} color={"#343333"} size={30} />}
               nextIcon={<FontIcons type={"CgChevronRightO"} color={"#343333"} size={30} />} >
               {SKILL_DATA.map((skill, index) => <Carousel.Item key={index}  >

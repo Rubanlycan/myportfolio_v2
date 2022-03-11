@@ -1,16 +1,16 @@
 import React, { useRef, useState } from "react";
 import { ic_react, ic_android, ic_web } from "../Services/Images";
+import { useNavigate } from 'react-router-dom'
 
 const PROJECT_DATA = [{ title: 'Native Android', img: ic_android, num: "1 projects", description: "Native Android apps developed using frontend Java" },
-{ title: 'React-Native', img: ic_react, num: "3 projects", description: "React-native cross-patform mobile apps developed using Typescript/ES6" },
-{ title: 'Web Apps', img: ic_web, num: "3 projects", description: "Reactjs web apps developed using Typescript/ES6" }]
+{ title: 'React-Native', img: ic_react, num: "2 projects", description: "React-native cross-patform mobile apps developed using Typescript/ES6" },
+{ title: 'Web Apps', img: ic_web, num: "2 projects", description: "Reactjs web apps developed using Typescript/ES6" }]
 const ProjectScreen = () => {
   const SkillBoxRef = useRef(null)
   const [hoveredIndex, setHoveredIndex] = useState(-1)
 
+  const navigate = useNavigate()
   const skillBoxFun = (e, id) => {
-
-
     setHoveredIndex(id)
   }
   return (
@@ -27,7 +27,7 @@ const ProjectScreen = () => {
               {PROJECT_DATA.map((i, unique) => <div key={unique} className="projectbox-parent  justify-content-evenly"
                 style={{ height: 200, width: 200, borderRadius: 5, backgroundColor: '#fff' }} ref={SkillBoxRef}
                 onMouseOver={e => skillBoxFun(e, unique)} onMouseLeave={() => setHoveredIndex(-1)}>
-                <div>
+                <div onClick={() => i.title === 'Web Apps' ? navigate('/project_view') : navigate('/project_view_mobile', { state: { type: i.title } })}>
                   <div className="d-flex flex-row align-items-center justify-content-center">
                     <img src={i.img} alt="new"
                       style={{
@@ -40,7 +40,7 @@ const ProjectScreen = () => {
                   </div>
 
                   <p className="ml-2 text-center" style={{ color: '#000', fontSize: 12, padding: 10, }}>{i.description}</p>
-                  <p className="ml-2 project-text" >{hoveredIndex === unique ? "< " + i.num + " />" : i.num}</p>
+                  <p className="ml-2 project-text" >{i.num}</p>
                 </div>
 
 
@@ -51,6 +51,7 @@ const ProjectScreen = () => {
           </div>
         </div>
       </div>
+
     </div>
 
   );

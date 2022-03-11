@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import FontIcons from "../Common/FontIcons";
 
 const IntroComponent = React.forwardRef(
@@ -27,17 +28,20 @@ const IntroComponent = React.forwardRef(
                 {subtitle1} <span style={{ color: "#000" }}>{subtitle2}</span>
               </h1>
             </div>
-            <h5 className="mt-2 " style={{ whiteSpace: "pre-wrap" }}>
+            <h5 className="mt-2 " style={{ fontSize: 18, whiteSpace: "pre-wrap" }}>
               {about}
             </h5>
             {showResume && (
-              <div className="d-flex flex-row mt-4 justify-content-between">
-                <a href="" className="resume-button">
+              <div className="d-flex flex-row mt-4 justify-content-between mobileSocial">
+                <span style={{ fontSize: 20, fontWeight: 'bold' }}>Connect</span>
+                {/* <a href={"../Common/ruban_resume.pdf"} className="resume-button" download>
                   <span style={{ fontSize: 20 }}>Resume</span>
-                </a>
+                </a> */}
                 <div className="d-flex align-items-center ">
                   <a
                     ref={ref}
+                    href="https://github.com/Rubanlycan"
+                    target={"_blank"}
                     className="icons-style d-flex align-items-center justify-content-center mx-4"
                     style={{ backgroundColor: "#fff", height: 40, width: 40 }}
                   >
@@ -49,6 +53,8 @@ const IntroComponent = React.forwardRef(
                   </a>
                   <a
                     ref={ref}
+                    href="https://www.instagram.com/ruban_devware/"
+                    target={"_blank"}
                     className="icons-style d-flex align-items-center justify-content-center mx-4"
                     style={{ backgroundColor: "#fff", height: 40, width: 40 }}
                   >
@@ -60,6 +66,8 @@ const IntroComponent = React.forwardRef(
                   </a>
                   <a
                     ref={ref}
+                    href="https://www.linkedin.com/in/ruban-dharmaraj-661b4619a/"
+                    target={"_blank"}
                     className="icons-style d-flex align-items-center justify-content-center mx-4 "
                     style={{ backgroundColor: "#fff", height: 40, width: 40 }}
                   >

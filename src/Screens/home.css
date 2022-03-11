@@ -48,13 +48,19 @@ a {
  align-self: flex-end
 
 }
+.project-view{
+  width: 80%;
+  height: 60%;
+  -webkit-box-shadow: 2px 0px 15px 5px rgba(0,0,0,0.96); 
+box-shadow: 2px 0px 15px 5px rgba(0,0,0,0.96);
+}
 .progressBar{ 
   display: flex;
 width:100%;
 height: 3px;
 border-radius: 5px;
    background-color:#fff; 
-animation: progressAnim 2s ease-in-out both; 
+animation: progressAnim 2s  both linear; 
   }
   @keyframes progressAnim {
     0%{
@@ -77,6 +83,71 @@ animation: progressAnim 2s ease-in-out both;
    width:100%;
     align-items:center;
 
+}
+.info-button{
+  position: relative;
+   top: -100px;
+    left: 100px; width: 150px;
+     background-color: transparent;
+  border-style: solid;
+   border-width: 2px;
+    border-radius: 20px;
+    font-weight: bold;
+     border-color: #8443df;
+      color: #8443df;
+      -webkit-box-shadow: 5px 5px 15px -7px rgba(0,0,0,0.59); 
+      box-shadow: 5px 5px 15px -7px rgba(0,0,0,0.59);
+}
+.bot-bg{ position: absolute;
+   bottom: 20px;
+    right: 20px; 
+    width: 50px;
+     height: 50px;
+
+     background: linear-gradient(97deg, rgba(137,76,223,1) 26%, rgba(108,35,212,1) 100%);
+       border-radius: 25px }
+.bot{ 
+  transform: rotate(-25deg);
+   position: 'relative';
+   bottom: 0px;
+   right: 0;
+   width: 15px;
+   height: 20px;
+   background-color: transparent;
+   border-radius: 10px;
+  animation: eyesAnim 2s linear infinite;
+  }
+  @keyframes eyesAnim {
+    from { 
+      transform: rotate(0deg); 
+  } to { 
+      transform: rotate(360deg); 
+  }
+  }
+.project-list{ 
+  height: 160px;
+   width: 220px;
+     cursor: pointer;
+      border-radius: 5px }
+    .project-list:hover{
+      -webkit-box-shadow: 0px 10px 13px -7px #000000, 1px 0px 9px 5px rgba(0,0,0,0.37); 
+      box-shadow: 0px 10px 13px -7px #000000, 1px 0px 9px 5px rgba(0,0,0,0.37);
+    }  
+.info-button:hover{
+  border-color: #8443df;
+  color: #fff;
+  background-color: #8443df;
+}
+.info-button:focus{
+  border-color: #8443df;
+  color: #fff;
+  background-color: #8443df;
+}
+.project-first{
+  height: 70%;
+   width: 100%;
+   background: rgb(193,175,219);
+   background: linear-gradient(90deg, rgba(193,175,219,1) 0%, rgba(159,113,224,1) 50%, rgba(132,67,223,1) 100%);
 }
 .parent-first{
   height: 50%;
@@ -146,3 +217,11 @@ animation: progressAnim 2s ease-in-out both;
   box-shadow: 0px 0px 0px 2px #eeeff0;
 }
 /* background-color: var(--secondary-color); */
+
+@media all and (max-width:500px){
+  .home{
+    display: flex;
+    flex-direction: column;
+  }
+
+}

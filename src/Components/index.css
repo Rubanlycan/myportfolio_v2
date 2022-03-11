@@ -5,7 +5,7 @@ p {
 .sidebar {
 
   height: 100%;
-  width: 85px;
+  width:85px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -16,6 +16,15 @@ p {
 .sidebar:hover {
   width: 200px;
 }
+.under_dev{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+ justify-content: center;
+
+  background-color:var(--primary-color);
+}
+
 .card-style {
   display: flex;
   flex-direction: column;
@@ -72,7 +81,8 @@ p {
   height: 90%;
   display: flex;
   align-items: center;
-  justify-content: center;
+
+  
 }
 .title-class {
   display: flex;
@@ -83,9 +93,12 @@ p {
   justify-content: center;
   align-items: flex-start;
 }
+
+
 .menu-items:hover {
   cursor: pointer;
   background-color: var(--secondary-color);
+
 }
 
 

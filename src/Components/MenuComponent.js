@@ -4,6 +4,7 @@ import { IoAlbumsOutline } from "react-icons/io5";
 import { BsTelephone } from "react-icons/bs";
 import { VscHome } from "react-icons/vsc";
 import { GoFileCode } from "react-icons/go";
+
 export const MenuComponent_Active = () => {
 
   return (
@@ -11,15 +12,16 @@ export const MenuComponent_Active = () => {
       <div className="d-flex flex-column w-100 align-items-center">
         <a
           href="/"
-          className={`menu-items w-100  d-flex flex-row justify-content-center pt-3 pb-3 `}
+          style={{ paddingRight: 40, paddingLeft: 40 }}
+          className={`menu-items w-100  d-flex flex-row  pt-3 pb-3 `}
         >
           <VscHome style={{ color: "#fff" }} size={25} className={`me-2 `} />
           <p style={{ color: "#fff" }}>Home</p>{" "}
         </a>
         <a
-
+          style={{ paddingRight: 40, paddingLeft: 40 }}
           href="/skills"
-          className={`menu-items w-100  d-flex flex-row justify-content-center pt-3 pb-3`}
+          className={`menu-items w-100  d-flex flex-row  pt-3 pb-3`}
         >
           <FiUser style={{ color: "#fff" }} size={25} className="me-2" />
           <p style={{ color: "#fff" }}>Skills</p>
@@ -27,14 +29,16 @@ export const MenuComponent_Active = () => {
 
         <a
           href="/projects"
-          className={`menu-items w-100  d-flex flex-row justify-content-center pt-3 pb-3`}
+          style={{ paddingRight: 40, paddingLeft: 40 }}
+          className={`menu-items w-100  d-flex flex-row pt-3 pb-3`}
         >
           <GoFileCode style={{ color: "#fff" }} size={25} className="me-2" />
           <p style={{ color: "#fff" }}>Projects</p>
         </a>
         <a
           href="/contact"
-          className={`menu-items  w-100 d-flex flex-row justify-content-center pt-3 pb-3`}
+          style={{ paddingRight: 40, paddingLeft: 40 }}
+          className={`menu-items  w-100 d-flex flex-row  pt-3 pb-3`}
         >
           <BsTelephone style={{ color: "#fff" }} size={25} className="me-2" />
           <p style={{ color: "#fff" }}>Contact</p>
