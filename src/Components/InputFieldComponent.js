@@ -1,13 +1,14 @@
 import React from 'react'
 import { FormControl, InputGroup } from 'react-bootstrap'
 
-const InputFieldComponent = ({ name, styles, className, inputType, onChange }) => {
+const InputFieldComponent = ({ name, styles, value, className, inputType, onChange }) => {
     return (
         <InputGroup className={"mb-3 input"}>
 
             <FormControl
                 className={className}
                 onChange={onChange}
+                value={value}
                 name={name}
                 style={styles}
                 as={inputType}

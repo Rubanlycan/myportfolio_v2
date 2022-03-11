@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import InputFieldComponent from "../Components/InputFieldComponent";
 import LabelComponent from "../Components/LabelComponent";
@@ -18,30 +18,35 @@ const CONTACT_DATA = [{
 },]
 const Contact = () => {
 
+
   const [sendMessage, setSendMessage] = React.useState({
     "name": "",
     "mailId": "",
     "message": ""
   })
-  const [isVisble, setIsVisible] = React.useState(true)
+  const [isVisble, setIsVisible] = React.useState(false)
+
+
   const setContactData = (event) => {
     event.preventDefault()
     const { name, value } = event.target
     setSendMessage({ ...sendMessage, [name]: value })
 
   }
-  const onRegisterSender = async () => {
+  const onRegisterSender = async (e) => {
+    e.preventDefault() // stops dom to re-render and shows only changed state
     if (sendMessage.name && sendMessage.mailId && sendMessage.message) {
       const data = await API.registerSenderData(sendMessage)
-      if (data) {
-        console.log(data)
+      if (data.data.status === 1) {
+        setIsVisible(!isVisble)
+
       }
-      setIsVisible(!isVisble)
       setSendMessage({
         "name": "",
         "mailId": "",
         "message": ""
       })
+
     } else {
       alert("Please enter all details")
     }
@@ -68,17 +73,18 @@ const Contact = () => {
         <div>
           <h3 className={"label"} style={{ color: '#000', fontSize: 24 }}>Get In Touch</h3>
           <div className="d-flex flex-column justify-content-center w-70 ">
+            <form onSubmit={onRegisterSender}>
 
-            <>
               <LabelComponent title={"Name"} className={"label"} />
-              <InputFieldComponent className={"input"} name={"name"} onChange={setContactData} />
+              <InputFieldComponent className={"input"} name={"name"} onChange={e => setContactData(e)} value={sendMessage.name} />
               <LabelComponent title={"Email"} className={"label"} />
-              <InputFieldComponent className={"input"} name={"mailId"} onChange={setContactData} />
+              <InputFieldComponent className={"input"} name={"mailId"} onChange={e => setContactData(e)} value={sendMessage.mailId} />
               <LabelComponent title={"Message"} className={"label"} />
-              <InputFieldComponent className={"input"} inputType={"textarea"} name={"message"} onChange={setContactData} />
-            </>
-            {isVisble ? <ButtonComponent onPress={onRegisterSender} button_text={"Send"} btnStyle={{ backgroundColor: '#8443df', width: 100, borderColor: ' #8443df', alignSelf: 'flex-end' }} /> : <p style={{ color: "#8443df" }}>message sent successfully</p>}
+              <InputFieldComponent className={"input"} inputType={"textarea"} name={"message"} onChange={e => setContactData(e)} value={sendMessage.message} />
 
+              {!isVisble ? <ButtonComponent button_text={"Send"}
+                btnStyle={{ backgroundColor: '#8443df', width: 100, borderColor: ' #8443df', alignSelf: 'flex-end' }} /> : <p style={{ color: "#8443df" }}>message sent successfully</p>}
+            </form>
           </div>
         </div>
       </div>
