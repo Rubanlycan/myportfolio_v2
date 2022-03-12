@@ -26,6 +26,7 @@ const Contact = () => {
     "message": ""
   })
   const [isVisble, setIsVisible] = React.useState(false)
+  const [isLoading, setIsLoading] = React.useState(false)
 
 
   useEffect(() => {
@@ -40,14 +41,14 @@ const Contact = () => {
 
   }
   const onRegisterSender = async (e) => {
-
+    setIsLoading(true)
     e.preventDefault() // stops dom to re-render and shows only changed state
     WebAnalytics('onClick_message_event', { name: sendMessage.name, email: sendMessage.mailId });
     if (sendMessage.name && sendMessage.mailId && sendMessage.message) {
       const data = await API.registerSenderData(sendMessage)
       if (data.data.status === 1) {
         setIsVisible(!isVisble)
-
+        setIsLoading(false)
       }
       setSendMessage({
         "name": "",
@@ -90,7 +91,7 @@ const Contact = () => {
               <LabelComponent title={"Message"} className={"label"} />
               <InputFieldComponent className={"input"} inputType={"textarea"} name={"message"} onChange={e => setContactData(e)} value={sendMessage.message} />
 
-              {!isVisble ? <ButtonComponent button_text={"Send"}
+              {!isVisble ? <ButtonComponent isLoading={isLoading} button_text={"Send"}
                 btnStyle={{ backgroundColor: '#8443df', width: 100, borderColor: ' #8443df', alignSelf: 'flex-end' }} /> : <p style={{ color: "#8443df" }}>message sent successfully</p>}
             </form>
           </div>
