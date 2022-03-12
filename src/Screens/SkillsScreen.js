@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Carousel } from "react-bootstrap";
 import FontIcons from "../Common/FontIcons";
 import { ic_react, ic_ux, ic_server, ic_backend } from '../Services/Images'
+import { WebAnalytics } from "../Services/WebAnalytics";
 
 
 const SKILL_DATA = [{
@@ -19,6 +20,11 @@ const SkillsScreen = () => {
   const [slideCurrentIndex, setSlideCurrentIndex] = React.useState(0)
   const [isSlideChanged, setIsSlideChanged] = React.useState(false)
 
+  useEffect(() => {
+
+    WebAnalytics('visitor_skill_event', { screen_name: "Skill Page" });
+
+  }, [])
   const changeSlide = (e) => {
     setSlideCurrentIndex(e)
   }

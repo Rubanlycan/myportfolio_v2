@@ -1,13 +1,22 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
+
+
 import { Button } from "react-bootstrap";
 import { profile_cover } from "../Services/Images";
-
+import { WebAnalytics } from '../Services/WebAnalytics'
 import "./home.css";
 
 import IntroComponent from "../Components/IntroComponent";
 
 const HomeScreen = () => {
   const socialRef = useRef(null);
+
+  useEffect(() => {
+
+    WebAnalytics('visitor_welcome_event', { screen_name: "Home Page" });
+    // setUserProperties(analytics, { visitor_welcome_event: 'apples' });
+    // logEvent(analytics, 'visitor_welcome_metric', { screen_name: "Homepage" });
+  }, [])
 
   return (
     <>

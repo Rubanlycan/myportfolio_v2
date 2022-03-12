@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, Offcanvas } from 'react-bootstrap'
 import { WEB_PROJECTS, ANDROID_PROJECTS, REACT_NATIVE_PROJECTS } from '../Services/constant'
 import { useLocation } from 'react-router-dom'
+import { WebAnalytics } from '../Services/WebAnalytics'
 
 
 export const ProjectViewScreen = () => {
@@ -9,6 +10,10 @@ export const ProjectViewScreen = () => {
     const PROJECT_DATA = WEB_PROJECTS
     const [isShow, setIsShow] = React.useState(false)
     const [pindex, setPindex] = React.useState(0)
+    useEffect(() => {
+        WebAnalytics(`visitor_project_details_event`, { screen_name: `Project web Details Page` });
+    }, [])
+
 
     return (
         <div className="project-parent-container">
@@ -54,7 +59,12 @@ export const ProjectViewScreenMobile = () => {
 
     const [currentImage, setCurrentImage] = React.useState(PROJECT_DATA[0])
     const [pindex, setPindex] = React.useState(0)
+    useEffect(() => {
 
+        WebAnalytics(`visitor_project_details_event`, { screen_name: `Project ${state.type} Details Page` });
+        // setUserProperties(analytics, { visitor_welcome_event: 'apples' });
+        // logEvent(analytics, 'visitor_welcome_metric', { screen_name: "Homepage" });
+    }, [])
 
     return (
         <div className="project-parent-container">

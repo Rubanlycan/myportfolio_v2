@@ -1,6 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { ic_react, ic_android, ic_web } from "../Services/Images";
 import { useNavigate } from 'react-router-dom'
+import { WebAnalytics } from "../Services/WebAnalytics";
 
 const PROJECT_DATA = [{ title: 'Native Android', img: ic_android, num: "1 projects", description: "Native Android apps developed using frontend Java" },
 { title: 'React-Native', img: ic_react, num: "2 projects", description: "React-native cross-patform mobile apps developed using Typescript/ES6" },
@@ -12,6 +13,21 @@ const ProjectScreen = () => {
   const navigate = useNavigate()
   const skillBoxFun = (e, id) => {
     setHoveredIndex(id)
+  }
+  useEffect(() => {
+
+    WebAnalytics('visitor_project_event', { screen_name: "Project Page" });
+    // setUserProperties(analytics, { visitor_welcome_event: 'apples' });
+    // logEvent(analytics, 'visitor_welcome_metric', { screen_name: "Homepage" });
+  }, [])
+
+  const projectNavigate = (screen) => {
+    WebAnalytics('onClick_project_event', { project_type: screen?.title })
+    if (screen.title === 'Web Apps') {
+      navigate('/project_view')
+    } else {
+      navigate('/project_view_mobile', { state: { type: screen.title } })
+    }
   }
   return (
     <div className="project-parent-container">
@@ -27,7 +43,7 @@ const ProjectScreen = () => {
               {PROJECT_DATA.map((i, unique) => <div key={unique} className="projectbox-parent  justify-content-evenly"
                 style={{ height: 200, width: 200, borderRadius: 5, backgroundColor: '#fff' }} ref={SkillBoxRef}
                 onMouseOver={e => skillBoxFun(e, unique)} onMouseLeave={() => setHoveredIndex(-1)}>
-                <div onClick={() => i.title === 'Web Apps' ? navigate('/project_view') : navigate('/project_view_mobile', { state: { type: i.title } })}>
+                <div onClick={() => projectNavigate(i)}>
                   <div className="d-flex flex-row align-items-center justify-content-center">
                     <img src={i.img} alt="new"
                       style={{

@@ -5,6 +5,7 @@ import LabelComponent from "../Components/LabelComponent";
 import ButtonComponent from "../Components/ButtonComponent";
 import FontIcons from "../Common/FontIcons";
 import API from '../Services/Api'
+import { WebAnalytics } from "../Services/WebAnalytics";
 
 const CONTACT_DATA = [{
   "icon": "GoLocation",
@@ -27,6 +28,11 @@ const Contact = () => {
   const [isVisble, setIsVisible] = React.useState(false)
 
 
+  useEffect(() => {
+
+    WebAnalytics('visitor_contact_event', { screen_name: "Contact Page" });
+
+  }, [])
   const setContactData = (event) => {
     event.preventDefault()
     const { name, value } = event.target
@@ -34,7 +40,9 @@ const Contact = () => {
 
   }
   const onRegisterSender = async (e) => {
+
     e.preventDefault() // stops dom to re-render and shows only changed state
+    WebAnalytics('onClick_message_event', { name: sendMessage.name, email: sendMessage.mailId });
     if (sendMessage.name && sendMessage.mailId && sendMessage.message) {
       const data = await API.registerSenderData(sendMessage)
       if (data.data.status === 1) {
