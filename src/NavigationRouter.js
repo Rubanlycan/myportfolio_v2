@@ -24,10 +24,16 @@ function useWindowSize() {
 
 const NavigationRouter = () => {
   const [width, height] = useWindowSize();
+  const [isMobile, setIsMobile] = useState(false);
   console.log(width)
   useEffect(() => {
-    if (width < 600) {
-      WebAnalytics('mobile_responsive_event')
+    if (width < 600 && !isMobile) {
+      WebAnalytics('visitor_responsive_event', { responsive: 'mobile' })
+      setIsMobile(true)
+    }
+    if (width > 600 && isMobile) {
+      WebAnalytics('visitor_responsive_event', { responsive: 'desktop' })
+      setIsMobile(false)
     }
   }, [width])
   return (
