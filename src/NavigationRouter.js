@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import SideNav from "./Components/SideNav";
 import ProjectScreen from "./Screens/ProjectScreen";
@@ -7,6 +7,7 @@ import SkillsScreen from "./Screens/SkillsScreen";
 import Contact from "./Screens/ContactScreen";
 import { ProjectViewScreen, ProjectViewScreenMobile } from "./Screens/ProjectViewScreen";
 import NoMobileResponsiveComponent from "./Components/NoMobileResponsiveComponent";
+import { WebAnalytics } from "./Services/WebAnalytics";
 
 function useWindowSize() {
   const [size, setSize] = useState([0, 0]);
@@ -24,6 +25,11 @@ function useWindowSize() {
 const NavigationRouter = () => {
   const [width, height] = useWindowSize();
   console.log(width)
+  useEffect(() => {
+    if (width < 600) {
+      WebAnalytics('mobile_responsive_event')
+    }
+  }, [width])
   return (
 
     <div className="">
