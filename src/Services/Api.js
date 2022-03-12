@@ -1,5 +1,7 @@
 import axios from 'axios'
-import { LOCAL_API } from './constant'
+import { Credentials } from '../config'
+
+const { auth_url } = Credentials
 
 let headers = {
     "Content-Type": "application/json",
@@ -7,7 +9,7 @@ let headers = {
 };
 
 let API = axios.create({
-    baseURL: LOCAL_API,
+    baseURL: auth_url,
     headers,
 });
 
