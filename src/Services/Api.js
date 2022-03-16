@@ -9,7 +9,7 @@ let headers = {
 };
 
 let API = axios.create({
-    baseURL: process.env.REACT_APP_LOCAL_URl,
+    baseURL: auth_url,
     headers,
 });
 

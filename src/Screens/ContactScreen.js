@@ -58,10 +58,12 @@ const Contact = () => {
         })
 
       } else {
+        setIsLoading(false)
         alert("Please enter all details")
       }
     } catch (e) {
       alert(e)
+      setIsLoading(false)
     }
 
 
