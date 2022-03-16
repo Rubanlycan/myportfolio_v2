@@ -41,24 +41,29 @@ const Contact = () => {
 
   }
   const onRegisterSender = async (e) => {
-    setIsLoading(true)
-    e.preventDefault() // stops dom to re-render and shows only changed state
-    WebAnalytics('onClick_message_event', { name: sendMessage.name, email: sendMessage.mailId });
-    if (sendMessage.name && sendMessage.mailId && sendMessage.message) {
-      const data = await API.registerSenderData(sendMessage)
-      if (data.data.status === 1) {
-        setIsVisible(!isVisble)
-        setIsLoading(false)
-      }
-      setSendMessage({
-        "name": "",
-        "mailId": "",
-        "message": ""
-      })
+    try {
+      setIsLoading(true)
+      e.preventDefault() // stops dom to re-render and shows only changed state
+      WebAnalytics('onClick_message_event', { name: sendMessage.name, email: sendMessage.mailId });
+      if (sendMessage.name && sendMessage.mailId && sendMessage.message) {
+        const data = await API.registerSenderData(sendMessage)
+        if (data.data.status === 1) {
+          setIsVisible(!isVisble)
+          setIsLoading(false)
+        }
+        setSendMessage({
+          "name": "",
+          "mailId": "",
+          "message": ""
+        })
 
-    } else {
-      alert("Please enter all details")
+      } else {
+        alert("Please enter all details")
+      }
+    } catch (e) {
+      alert(e)
     }
+
 
   }
   return (
